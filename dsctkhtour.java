@@ -233,7 +233,7 @@ class dsctkhtour {
         try {
             BufferedReader br=new BufferedReader(new FileReader(file));
             int n=0;
-            ds=new ctkhtour[100];
+            ds=new ctkhtour[1000];
             String line="";
 
             while((line=br.readLine())!=null){

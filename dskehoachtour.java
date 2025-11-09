@@ -364,47 +364,6 @@ public class dskehoachtour {
         System.out.println("Da cap nhat so ve cho KHT: " + maKHTour + ". Con lai: " + soveconlai);
     }
 
-    public void doanhthu() {
-        System.out.println("\n=== THONG KE DOANH THU TOUR ===");
-        System.out.printf("%-10s %-10s %-15s %-15s %-15s\n",
-                "MaKHT", "MaTour", "So ve da ban", "Gia ve", "Doanh thu");
-        
-        for (int i = 0; i < N; i++) {
-            int soVeDaBan = ds[i].getTongsove() - ds[i].getSoveconlai();
-            int giaVe = ds[i].getTongtienve() / ds[i].getTongsove(); // Giá vé trung bình
-            int doanhThu = soVeDaBan * giaVe;
-            
-            System.out.printf("%-10s %-10s %-15d %-15d %-15d\n",
-                    ds[i].getMakhtour(),
-                    ds[i].getMatour(),
-                    soVeDaBan,
-                    giaVe,
-                    doanhThu);
-        }
-    }
-
-    public void loinhuan() {
-        System.out.println("\n=== THONG KE LOI NHUAN TOUR ===");
-        System.out.printf("%-10s %-10s %-15s %-15s %-15s %-15s\n",
-                "MaKHT", "MaTour", "Doanh thu", "Tong chi phi", "Loi nhuan", "Ti le LN(%)");
-        
-        for (int i = 0; i < N; i++) {
-            int soVeDaBan = ds[i].getTongsove() - ds[i].getSoveconlai();
-            int giaVe = ds[i].getTongtienve() / ds[i].getTongsove();
-            int doanhThu = soVeDaBan * giaVe;
-            int tongChiPhi = ds[i].getTongchi() + ds[i].getTongan() + 
-                           ds[i].getTongo() + ds[i].getTongdilai();
-            int loiNhuan = doanhThu - tongChiPhi;
-
-            System.out.printf("%-10s %-10s %-15d %-15d %-15d %-15.2f\n",
-                    ds[i].getMakhtour(),
-                    ds[i].getMatour(),
-                    doanhThu,
-                    tongChiPhi,
-                    loiNhuan
-                   );
-        }
-    }
     public void thongKeDoanhThuTheoQuy(dshoadon dshd) {
     System.out.println("\n       === THONG KE DOANH THU THEO QUY ===     ");
     int[] doanhThuQuy = new int[4];
